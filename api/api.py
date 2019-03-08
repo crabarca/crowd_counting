@@ -1,9 +1,6 @@
 from flask import Flask
 app = Flask(__name__)
 
-def 
-
-
 
 @app.route('/')
 def index():
@@ -13,3 +10,6 @@ def index():
 def say_hello():
   return 'Hello from Server'
 
+@app.route('/welcome')
+def say_welcome():
+  return 'Hello from cristobal'
