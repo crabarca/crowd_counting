@@ -1,0 +1,5 @@
+SELECT COUNT(*)
+FROM requests
+WHERE datetime >= ? AND datetime <= ?;
+-- 2019-02-21T13:02:47.549962
+-- 2019-02-21T13:10:47.549962

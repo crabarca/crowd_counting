@@ -1,0 +1,14 @@
+# Editor
+.ipynb_checkpoints
+.vscode
+
+# Data
+data/*
+crowdcounting.db
+probemon.log
+
+# Pyenv
+pyenv/*
+
+#Misc
+manuf-master*
