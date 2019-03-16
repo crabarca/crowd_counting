@@ -12,8 +12,16 @@ Hora   | Personas
 11.35 - 20
 11.40 - 19
 11.45 - 19
-11.50 - 
-11.55 - 
-12.00 - 
-12.05 -
-12.10 - 
+11.50 - 26
+11.55 - 29
+12.00 - 27
+12.05 - 22
+12.10 - 19
+
+
+Hora termino scanner: 12:10 aprox
+
+-----
+Fecha: 10/03/2019
+Lugar: Sala espera aeropuerto Santiago puerta 25
+Aprox 300 personas radio 50 mts
