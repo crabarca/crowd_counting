@@ -1,2 +1,2 @@
-SELECT COUNT(*) AS Total_Count
+SELECT COUNT(*) AS Total
 FROM requests;
