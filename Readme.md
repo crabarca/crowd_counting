@@ -23,9 +23,9 @@ La configuración para poder activar el modo monitor de la interfaz de red a usa
 
 Una vez que la interfaz ha sido configurada en modo monitor se puede proceder a realizar la captura y filtrado de paquetes. 
 
-Los paquetes son recolectados mediante la libreria [Scapy](https://scapy.net/) para `Python`. La decisión de utilizar esta libreria sobre otras herramientas se fundamenta en la simplicidad que se logra para poder acceder a todo el entorno de Python tanto para hacer manipulación y almacenamiento de datos. Por otro lado, la librería esta diseñada con la extensibilidad en mente. 
+Los paquetes son recolectados mediante la libreria [Scapy](https://scapy.net/) de `Python`. La decisión de utilizar esta libreria sobre otras herramientas se fundamenta en la simplicidad que se logra para poder acceder a todo el entorno de Python tanto para hacer manipulación y almacenamiento de datos. Por otro lado, la librería esta diseñada con la extensibilidad en mente. 
 
-Otras herramientas disponibles para captura y filtro de paquetes (más populares):
+Otras herramientas populares disponibles para captura y filtro de paquetes:
 - [Tcpdump](https://www.tcpdump.org/)
 - [Wireshark](https://www.wireshark.org/)
 - [Kismet](https://www.kismetwireless.net/)
@@ -41,15 +41,17 @@ Una vez que los paquetes son capturados es de especial interes guardar la siguie
 - **SSID:** Nombre de la red
 - **RSSI:** Potencia de la señal del dispositivo 
 
-Los únicos campos que siempre estarán presentes son **Tiempo de captura** y **Mac address*, el resto de los campos son opcionales y son utilizados para obtener estadísticas adicionales a las relacionadas con la densidad de personas. 
+Los únicos campos que siempre estarán presentes son **Tiempo de captura** y **Mac address**, el resto de los campos son opcionales y son utilizados para obtener estadísticas adicionales a las relacionadas con la densidad de personas. 
 
-Cada vez que se detecta un nuevo paquete, la información de este es guardado instantaneamente en la base de datos. Actualmente la KEY de corresponde a la fecha/hora de captura, ya que es altamente improbable sino imposible (revisar) que dos paquetes se capturen exactamente al mismo tiempo.
+Cada vez que se detecta un nuevo paquete, la información de este es guardado instantaneamente en la base de datos. Actualmente la Key corresponde a la fecha/hora de captura, ya que es imposible que dos paquetes sean detectados al mismo tiempo debido que estos se reciben de manera secuencial por la interfaz de red. 
 
-Actualmente la información es almacenada en una base de datos [SQLite](https://www.sqlite.org/index.html), se decidio utilizar esta BD simplemente por comodidad dado que [Python](https://docs.python.org/3.5/library/sqlite3.html) la incluye dentro de su paquete estándar de librerias.
+Actualmente la información es almacenada en una base de datos [SQLite](https://www.sqlite.org/index.html), se decidio utilizar esta BD simplemente por comodidad dado que [Python](https://docs.python.org/3.5/library/sqlite3.html) la incluye dentro de su paquete estándar de librerias y las caracteristicas ofrecidas por SQLite son más que suficientes para el propósito del proyecto.
 
 
 ## Transformación de los datos
 Explicar que operaciones de ETL se realizaron a los datos para poder pasar al proceso de análisis. 
+
+Todas las operaciones de extracción de datos se realizan mediante scripts SQL. 
 
 
 ## Análisis de los datos 
@@ -62,4 +64,4 @@ Análisis estadistico de los datos
 Explicar los gráficos y escalas utilizadas para poder determinar la utilización de las salas 
 
 ## Trabajo futuro
-Implementar una estación de monitoreo permanente que detecte los paquetes de Probe Request mediante el procedimiento antes mencionado. Mediante la utilización de un *IoT Gateway* (important buzzword) es posible recolectar esta información y almacenarla en algún servidor predeterminado para luego ser consultado por un cliente web que disponga la información y las métricas con respecto al uso de espacios donde se ubican los dispositivos de medición. 
+Implementar una estación de monitoreo permanente que detecte los paquetes de Probe Request mediante el procedimiento antes mencionado. Mediante la utilización de un *IoT Gateway* es posible recolectar esta información y almacenarla en un servidor para luego ser consultado por un cliente web público que disponga la información y las métricas con respecto al uso de espacios donde se ubican los dispositivos de medición. 
